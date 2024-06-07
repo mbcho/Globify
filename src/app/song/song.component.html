@@ -1,3 +1,20 @@
 <div class="song-tile">
-    <p>song works!</p>
+    <div class="song-header">
+        <div>
+            <div class="song-title">Blinding Lights</div>
+            <div class="song-artist">The Weeknd</div>
+        </div>
+        <div class="like-button" (click)="toggleLike()">
+            <span [ngClass]="{'filled': isLiked, 'outlined': !isLiked}">❤</span>
+        </div>
+    </div>
+    <div class="song-controls">
+        <button class="previous-button">⏪</button>
+        <button class="play-pause" (click)="togglePlayPause()">
+            <span *ngIf="!isPlaying">▶️</span>
+            <span *ngIf="isPlaying">⏸</span>
+        </button>
+        <button class="next-button">⏩</button>
+        <input type="range" class="progress-bar">
+    </div>
 </div>
